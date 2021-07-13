@@ -1,0 +1,50 @@
+#slider-container{
+    padding-left: 1px;
+    padding-right:0px ;
+    padding-top: 0px;
+}
+h3{
+    text-align:left;
+    color:white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+/* h1 {
+  color: white;
+  text-shadow: 2px 2px 4px #000000;
+} */
+body{
+  background-color:rgb(140, 140, 148);
+}
+p{
+  text-orientation: initial;
+ 
+}
+h4{
+  color:white;
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+  padding-right: 10px;
+  padding-left: 10px; 
+}
+table {
+    border-collapse: collapse;
+    border-style: solid;
+}
+
+
+
+th {
+  background-color: lightgray;
+}
+
+#event-table {
+  margin-left: 250px;
+  margin-top: 50px;
+}
+h2{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:large;
+  
+}

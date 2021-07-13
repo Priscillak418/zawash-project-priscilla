@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Registration form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <a class="navbar-brand" href="home.html">Zawash</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="registration_form2.html">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="login.html">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row justify-content-center">
+        <div class="class-md-6">
+            <div class="card-body">
+                <header class="card-header">
+                    <h4 class="card-title">Registration car washer</h4>
+                </header>
+                <form action="/get" method="POST">
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>First name </label>
+                            <input class="form-control " name="firstname">
+                            <div class="invalid-feedback">please enter valid firstname !</div>
+                        </div>
+                        <div class="col form-group">
+                            <label>Last name</label>
+                            <input class="form-control" name="lastname">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label>Username </label>
+                            <input class="form-control" name="username">
+                        </div>
+                        <div class="col form-group">
+                            <label>Password</label>
+                            <input class="form-control" name="password">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col form-group">
+                            <label for="dateofbirth">Date of birth</label>
+                            <input type="date" name="dateofbirth" id="dateofbirth" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="phonenumber">Phonenumber</label>
+                        <input type="" name="phonenumber" id="phonenumber " class="form-control">
+                    </div>
+                    <div class="form-row">
+
+                        <div class="col form-group">
+                            <label>Gender </label>
+                            <select class="form-control" name="gender">
+                                <option value="fulltime"> Female</option>
+                                <option value="parttime">Male</option>
+                            </select>
+                        </div>
+                        <div class="col form-group">
+                            <label>Employee type </label>
+                            <select class="form-control" name="employeetype">
+                                <option value="fulltime"> Full time</option>
+                                <option value="parttime">Part time</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="class-md-6" class="col form-group">
+                        <button class="btn btn-secondary btn-block">Register</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

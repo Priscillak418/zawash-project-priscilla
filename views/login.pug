@@ -1,0 +1,20 @@
+extends layout 
+block content
+            form(action='/login' method='POST')
+                div.row.justify-content-center
+                    div.class-md-6
+                        div.card-body
+                            header.card-header
+                                h4.card-title LOGIN
+                            div.form-group
+                                label(for='exampleInputEmail1') Email address
+                                input.form-control#exampleInputEmail1(type='email' aria-describedby='emailHelp' placeholder='Enter email')
+                                small#emailHelp.form-text.text-muted We'll never share your email with anyone else.
+                            div.form-group
+                                label(for='exampleInputPassword1') Password
+                                input.form-control#exampleInputPassword1(type='password' placeholder='Password')
+                            div.form-check
+                                input.form-check-input#exampleCheck1(type='checkbox')
+                                label.form-check-label(for='exampleCheck1') Check me out
+                            div.class-md-6
+                                button.btn.btn-secondary.btn-block Submit

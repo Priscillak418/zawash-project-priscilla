@@ -1,0 +1,49 @@
+extends layout 
+block content
+            h2 Zaabu Washing Bay (ZaWash) is found along Mawanda Road, Kampala. It employs youth in the areas of Kalerwe, Katanga among others.
+            div.col-lg-12.col-md-6.col-sm-12#slider-container.container-fluid.p-0
+                div#carouselExampleIndicators.carousel.slide(data-ride='carousel')
+                    ol.carousel-indicators
+                        li.active(data-target='#carouselExampleIndicators' data-slide-to='0')
+                        li(data-target='#carouselExampleIndicators' data-slide-to='1')
+                    div.carousel-inner#images
+                        div.carousel-item.active
+                            img.d-block.w-100(src='26712280-Beauty-black-car-with-soap-in-car-wash-Stock-Photo-auto.jpeg' alt='First slide')
+                        div.carousel-item
+                            img.d-block.w-100(src='luxury-red-car-soap-foam-outdoors-car-wash-service-side-view-handsome-young-african-man-using-green-microfiber-luxury-red-191790846.jpeg' alt='Second slide')
+                    a.carousel-control-prev(href='#carouselExampleIndicators' role='button' data-slide='prev')
+                        span.carousel-control-prev-icon(aria-hidden='true')
+                        span.sr-only Previous
+                    a.carousel-control-next(href='#carouselExampleIndicators' role='button' data-slide='next')
+                        span.carousel-control-next-icon(aria-hidden='true')
+                        span.sr-only Next
+            h3 Wash packages
+            div.row
+                div.col.lg-6.col-sm-12
+                    table.table.table-striped
+                        thead
+                            tr
+                                th(scope='col') #
+                                th(scope='col') Package
+                                th(scope='col') Price
+                        tbody
+                            tr
+                                th(scope='row') 1
+                                td Small cars
+                                td 10000
+                            tr
+                                th(scope='row') 2
+                                td Medium
+                                td 15000
+                            tr
+                                th(scope='row') 3
+                                td Full wash
+                                td 20000
+                            tr
+                                th(scope='row') 4
+                                td Boda-boda
+                                td 5000
+                            tr
+                                th(scope='row') 5
+                                td Full wash
+                                td 20000
