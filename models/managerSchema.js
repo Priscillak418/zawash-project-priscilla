@@ -1,25 +1,22 @@
 const mongoose = require('mongoose');
+const passportLocalMongoose = require('passport-local-mongoose');
 
 const managerSchema = new mongoose.Schema({
     firstname: {
         type: String,
         trim: true,
+        required: 'Please provide first name',
     },
     lastname: {
         type: String,
         trim: true,
+        required: 'Please provide last name',
     },
     username: {
         type: String,
         trim: true,
-    },
-    password: {
-        type: String,
-        trim: true,
-    },
-    dateofbirth: {
-        type: Date,
-        trim: true,
+        required: 'Please provide user name',
+        unique: true,
     },
     phonenumber: {
         type: String,
@@ -31,4 +28,5 @@ const managerSchema = new mongoose.Schema({
     },
 });
 
+managerSchema.plugin(passportLocalMongoose);
 module.exports = mongoose.model ('Manager',managerSchema);

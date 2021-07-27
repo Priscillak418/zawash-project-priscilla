@@ -19,10 +19,10 @@ const washerSchema = new mongoose.Schema ({
     },
     dateofbirth: {
         type: Date,
-        trim: true,
+        
     },
-    phonenumber: {
-        type: Number,
+    nin: {
+        type: String,
         trim: true,
     },
     gender: {

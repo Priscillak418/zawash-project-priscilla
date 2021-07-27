@@ -2,34 +2,42 @@ extends layout
 block content
             header.card-header
                 h4.card-title Registration manager
-            form(action='/manager' method='POST')
+                if alert == "success"
+                    div.alert.alert-info Manager added successfully
+                if alert == 'error'
+                    div.alert.alert-danger An error occured,failed to add manager    
+            form#my-form(action='/manager' method='POST' onsubmit='return checkEmpty();')
                 div.form-row
                     div.col.form-group
                         label First name
-                        input.form-control(name='firstname')
+                        input.form-control(name='firstname' id='firstname' )
+                        span#firstnameError(role='alert' aria-hidden='true')
                     div.col.form-group
                         label Last name
-                        input.form-control(name='lastname')
+                        input.form-control(name='lastname' id='lastname')
+                        span#lastnameError(role='alert' aria-hidden='true')
                 div.form-row
                     div.col.form-group
                         label Username
-                        input.form-control(name='username')
+                        input.form-control(name='username' id='username')
+                        span#usernameError(role='alert' aria-hidden='true')
                     div.col.form-group
                         label Password
-                        input.form-control(name='password')
+                        input.form-control(name='password' id='password')
+                        span#passwordError(role='alert' aria-hidden='true')
                 div.form-row
                     div.col.form-group
-                        label(for='dateofbirth') Date of birth
-                        input.dateofbirth.form-control(type='date' name='dateofbirth')
-                div.form-group
-                    label(for='phonenumber') Phonenumber
-                    input.phonenumber.form-control(type name='phonenumber')
-                div.form-group
-                    label Gender
-                        select.form-control(name='gender')
+                        label(for='phonenumber') Phonenumber
+                        input.phonenumber.form-control(type='number' name='phonenumber' id='phonenumber')
+                        span#phonenumberError(role='alert' aria-hidden='true')
+                div.form-row
+                    div.col.form-group
+                        label Gender
+                        select.form-control(name='gender' id='gender')
                             option(value='female') Female
-                            option(value='male') Male
-                            
+                            option(value='male') Male 
+                        span#genderError(role='alert' aria-hidden='true')                
                 div.form-row
                     div.col.form-group
-                        button.btn.btn-secondary.btn-block Register    
+                        button.btn.btn-secondary.btn-block(type='submit')  Register    
+            script(src="/valmanager.js")

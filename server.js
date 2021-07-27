@@ -6,11 +6,21 @@ const registermanagerRoutes = require('./routes/registermanagerRoutes')
 const washerRoutes = require('./routes/washerRoutes')
 const loginRoutes = require('./routes/loginRoutes')
 const vehicleRoutes = require('./routes/vehicleRoutes')
+const reportRoutes = require('./routes/reportRoutes');
+const expensesRoutes = require('./routes/expensesRoutes');
 const mongoose = require('mongoose');
+const moment = require('moment');
+const passport = require('passport');
+const expressSession = require('express-session')({
+    secret: 'secret',
+    resave: false,
+    saveUninitialized: false
+});
 require('dotenv').config();
-require('./models/managerSchema');
+const managerSchema = require('./models/managerSchema');
 require('./models/vehicleSchema');
 require('./models/washerSchema');
+require('./models/expenseSchema');
 
 
 
@@ -20,7 +30,8 @@ const app = express()
 //connecct to database
 mongoose.connect(process.env.DATABASE, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useCreateIndex: true
 });
 
 mongoose.connection
@@ -33,13 +44,33 @@ mongoose.connection
 
 
 //Configurations
+app.locals.moment = moment
 app.set('view engine', 'pug');
 app.set('views', './views');
 
+
 // middle ware
 app.use(express.urlencoded({ extended: true }))
+app.use(expressSession);
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(managerSchema.createStrategy());
+passport.serializeUser(managerSchema.serializeUser());
+passport.deserializeUser(managerSchema.deserializeUser());
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+//When someone logins in for the first time they are automatically redirected to the login page
+ var loginChecker = function(req, res, next) {
+     if (req.path != '/login' && !req.session.user) {
+        res.redirect('/login')
+     }
+     next()
+    }
+ app.use(loginChecker)
+
+ 
 
 //Routes
 //homeRoutes
@@ -56,6 +87,13 @@ app.use('/login', loginRoutes);
 
 //vehicleRoutes
 app.use('/vehicle', vehicleRoutes);
+
+//report routes
+app.use('/report', reportRoutes);
+
+//expenses routes
+app.use('/expenses', expensesRoutes);
+
 
 //register_washer 
 // app.get('/register', (req, res) => {
@@ -83,7 +121,7 @@ app.get('/navbar', (req, res) => {
 //     res.render('register_manager', { title: "Registration manager" })
 // })
 //login
-// app.get('/login', (req, res) => {
+// app.get('/', (req, res) => {
 //     res.render('login', { title: "Login page" })
 // })
 

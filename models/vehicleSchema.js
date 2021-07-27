@@ -5,9 +5,14 @@ const vehicleSchema = new mongoose.Schema ({
         type: String,
         trim: true,
     },
+    dateofarrival: {
+        type: Date,
+
+    },
+
     datetimeArrival: {
         type: Date,
-        trim: true,
+        
     },
     color: {
         type: String,
@@ -18,13 +23,19 @@ const vehicleSchema = new mongoose.Schema ({
         trim: true,
     },
     washer: {
-        type: String,
-        trim: true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'washer',
     },
     washpackage: {
         type: String,
         trim: true
-    }
+    },
+    packagePrice:{
+        type: Number,
+    },
+    washerFee:{
+        type: Number,
+    }, 
 
 
 })

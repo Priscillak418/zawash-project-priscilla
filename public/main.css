@@ -13,7 +13,8 @@ h3{
   text-shadow: 2px 2px 4px #000000;
 } */
 body{
-  background-color:rgb(140, 140, 148);
+  background-color:darkgrey;
+  
 }
 p{
   text-orientation: initial;
@@ -36,7 +37,7 @@ table {
 
 
 th {
-  background-color: lightgray;
+  background-color: rgb(230, 228, 228);
 }
 
 #event-table {
@@ -46,5 +47,21 @@ th {
 h2{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size:large;
-  
+  color: white;
 }
+
+#my-form{
+  padding: 2rem;
+  background:lightgray;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid grey;
+}
+
+
+
+
+
+
+
+
