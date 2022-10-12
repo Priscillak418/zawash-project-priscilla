@@ -1,15 +1,13 @@
-This is a car wash management web app for Zawash Washing Bay found along Mawanda Road, Kampala.
-It employs youth in the areas of Kalerwe, Katanga among others.
+This is a car wash management web app for Zawash Washing Bay Kampala.
+It employs youth in the areas of Kampala.
 
-This software is meant for managerial purposes to be used by the washing bay manager.
+This software is meant to be used by the washing bay manager for managerial purposes.
 
 Features
 Registers managers
 Register Cars & Washers
-Track money earned by washers
-Track revenue received per day, week, month
-Track Car washing
+Tracks daily expenses
 
 Technologies used
 Node js, Express & Mongo DB (Backend)
-HTML, CSS Bootstrap (Front End)
+HTML, CSS Bootstrap,PUG (Front End)
